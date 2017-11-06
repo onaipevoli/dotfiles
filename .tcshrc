@@ -1,0 +1,45 @@
+
+setenv EDITOR "emacs -nw"
+#setenv LC_ALL C
+setenv LC_MESSAGES C
+setenv LC_TIME  C
+setenv BC_ENV_ARGS ~/.bcrc
+setenv LESS "-aeij8XsrR"
+setenv LESSOPEN "|/usr/bin/lesspipe.sh %s"
+setenv MANPATH `manpath`
+if (-f .site_tcshrc) then
+    #Call site dependnt rc
+    source .site_tcshrc
+endif
+#setenv VMANAGER_JAVA_OPTIONS -Xmx4096m
+
+alias ls "ls -F"
+alias egrep "egrep --exclude-dir=.svn"
+alias sandbox cd ~/../../sandbox/tyamada
+alias vncs vncserver :9 -geometry 1366x700
+alias vncsb  vncserver :9 -geometry 1600x1180
+alias vnck vncserver -kill :9
+
+#set color
+set ignoreeof
+set matchbeep=nomatch
+unset autologout
+
+set path=(~/bin ~/local/bin $path)
+
+##Configuration for Screen
+# Display current directly on window title bar
+alias screen '(setenv UNDER_SCREEN; /usr/bin/screen \!*)'
+set prompt="> "
+if ( $?UNDER_SCREEN ) then
+    set prompt="%{\033[0000m\033k%c6\033\\%}> "
+endif
+
+
+#if ( $?XTERM_SHELL ) then
+#  if ( $XTERM_SHELL == "/usr/bin/screen" ) then
+#    set prompt="%{\033[0000m\033k%c6\033\\%}> "
+#  endif
+#endif
+
+
