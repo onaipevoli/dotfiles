@@ -1,0 +1,17 @@
+#!/bin/sh
+
+idList=`screen -list | egrep 'Detached' | sed 's/\./ /' | gawk '{print $1}'`
+echo $idList
+for id in $idList
+do
+    xterm -e screen -r $id &
+done
+
+# Generate a script to set DISPLAY varible current display.
+# This is needed when display changes during logout
+(echo -n "setenv "; set | egrep DISPLAY | sed "s/=/ /g" ) > ~/disp.sh
+
+  
+
+
+
