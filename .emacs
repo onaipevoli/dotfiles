@@ -74,6 +74,9 @@
 (global-set-key "\M-n" (lambda() (interactive) (scroll-up 1) (next-line 1)))
 (global-set-key "\M-p" (lambda() (interactive) (scroll-down 1) (previous-line 1)))
 
+;; Follow link without question
+(setq vc-follow-symlinks t)
+
 ;;;; font-lock ;;;;
 ;; (when (fboundp 'global-font-lock-mode)
 ;;   (global-font-lock-mode t))
