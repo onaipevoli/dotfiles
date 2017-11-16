@@ -10,6 +10,7 @@ targets=(
     .less
     .lesskey
     .screenrc
+    .ctags
 )
 
 for target in "${targets[@]}"; do
