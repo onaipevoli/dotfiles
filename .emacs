@@ -144,6 +144,16 @@
   (interactive)
   (ansi-color-apply-on-region (point-min) (point-max)))
 
+;;;; My function for verilog file compilation                                ;;;;;;
+;;;; Define a function to search Makefile to upward directory and execute it ;;;;;;
+(defun verilog-compile ()
+  "Traveling up the path, find a Makefile and `compile'."
+  (interactive)
+  (when (locate-dominating-file default-directory "Makefile")
+  (with-temp-buffer
+    (cd (locate-dominating-file default-directory "Makefile"))
+    (compile "make compile"))))
+
 
 ;;;; MISC ;;;;
 ;;Don't automaticaly split buffer vertical. Disable the feature from EMACS 23
@@ -179,3 +189,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+

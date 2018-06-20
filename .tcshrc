@@ -24,13 +24,16 @@ alias vncsb  vncserver :9 -geometry 1600x1180
 alias vnck vncserver -kill :9
 alias git_config_local "git config --local user.name onaipevoli; git config --local user.email 7885034+onaipevoli@users.noreply.github.com"
 
+#Some EDA tool complain about lack of virtual memory size
+limit stacksize u
+
 
 #set color
 set ignoreeof
 set matchbeep=nomatch
 unset autologout
 
-set path=(~/bin ~/local/bin $path)
+set path=(~/bin ~/local/bin /usr/sbin $path)
 
 ##Configuration for Screen
 # Display current directly on window title bar
