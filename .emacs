@@ -77,14 +77,6 @@
 ;; Follow link without question
 (setq vc-follow-symlinks t)
 
-;;;; font-lock ;;;;
-;; (when (fboundp 'global-font-lock-mode)
-;;   (global-font-lock-mode t))
-;;Colors for black background
-(set-face-foreground 'font-lock-keyword-face "blue")
-(set-face-foreground 'font-lock-string-face "purple")
-(set-face-foreground 'font-lock-variable-name-face "magenta")
-
 ;;;; Verilog-mode ;;;;
 (autoload 'verilog-mode "verilog-mode" "Verilog mode" t )
 (add-to-list 'auto-mode-alist '("\\.[ds]?vh?\\'" . verilog-mode))
@@ -135,7 +127,7 @@
 (setq recentf-max-saved-items 100)
 
 ;;;; Anything ;;;;
-(require 'anything-startup)
+;(require 'anything-startup)
 
 
 ;;;; Process escape sequence ;;;;
@@ -176,17 +168,5 @@
 (put 'set-goal-column 'disabled nil)
 (setq large-file-warning-threshold 100000000)
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(anything-ff-file ((t (:foreground "blue" :underline nil))))
- '(compilation-info ((t (:foreground "green")))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(load-theme 'manoj-dark t)
 

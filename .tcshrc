@@ -4,7 +4,7 @@ setenv EDITOR "emacs -nw"
 # Display UTF-8 file names. Other locale to be english
 setenv LANG C
 setenv LC_CTYPE ja_JP.UTF-8
-
+setenv TERM xterm-256color
 setenv LESS "-aeij8XsrR"
 
 if (-f /usr/bin/lesspipe.sh) then
