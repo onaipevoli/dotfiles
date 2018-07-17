@@ -1,9 +1,12 @@
 escape ^J^J
-term xterm
 ignorecase on
 markkeys "h=^B:j=^N:k=^P:l=^F:$=^E"
 shell /bin/tcsh
 shelltitle '> |:'
+hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %Y %m/%d %C:%s%a"
+hardstatus off
+
+
 #termcapinfo xterm 'hs:ts=\E]1;:fs=\007:ds=\E]2;screen\007'
 
 #Disable unused bindings
