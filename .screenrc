@@ -3,7 +3,7 @@ ignorecase on
 markkeys "h=^B:j=^N:k=^P:l=^F:$=^E"
 shell /bin/tcsh
 shelltitle '> |:'
-hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %Y %m/%d %C:%s%a"
+hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %Y/%m/%d %D %0c:%s"
 hardstatus off
 
 
