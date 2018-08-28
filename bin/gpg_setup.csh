@@ -1,14 +1,12 @@
-#!/bin/tcsh -x
-
-set gpg_info=~/.gpg-agent-info
+set gpg_info=~/.gpg-agent-info.`hostname`
 
 # Exit if gpg-agent is not found
 which gpg-agent >> /dev/null || exit
+setenv GPG_TTY `tty`
 
 if (-f ${gpg_info}) then
   # Set environment variables for gpg-agent
   eval `gawk -F = '{print "setenv", $1, $2, ";"}' < ${gpg_info}`
-  setenv GPG_TTY `tty`
 
   # Check if pgp-agent is certainly running. If yes, exit the script
   set gpg_id=`echo ${GPG_AGENT_INFO} | sed -e 's/.*gpg-agent:\([^:]*\):.*$/\1/'`
@@ -23,5 +21,4 @@ endif
 
 # Run gpg-agent
 # This command leaves veariable setting in ~/.gpg-agent-info for other login processes
-eval `gpg-agent --daemon --write-env-file`
-
+eval `gpg-agent --daemon --write-env-file $gpg_info`
