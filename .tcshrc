@@ -23,6 +23,7 @@ alias vncs vncserver :9 -geometry 1366x700
 alias vncsb  vncserver :9 -geometry 1600x1180
 alias vnck vncserver -kill :9
 alias git_config_local "git config --local user.name onaipevoli; git config --local user.email 7885034+onaipevoli@users.noreply.github.com"
+alias setkbd "setxkbmap -layout jp,us"
 
 #Some EDA tool complain about lack of virtual memory size
 limit stacksize u
@@ -42,3 +43,5 @@ set prompt="> "
 if ( $?UNDER_SCREEN ) then
     set prompt="%{\033[0000m\033k%c6\033\\%}> "
 endif
+
+source ~/dotfiles/bin/gpg_setup.csh
