@@ -5,7 +5,7 @@ shell /bin/tcsh
 shelltitle '> |:'
 hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %Y/%m/%d %D %0c:%s"
 hardstatus off
-
+startup_message off
 
 #termcapinfo xterm 'hs:ts=\E]1;:fs=\007:ds=\E]2;screen\007'
 

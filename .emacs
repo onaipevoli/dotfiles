@@ -69,6 +69,7 @@
 (global-unset-key [\C-backspace])
 (global-unset-key "\C-x\C-c")
 (global-set-key "\C-x\C-c\C-c" `save-buffers-kill-terminal)
+(global-unset-key "\C-\\")
 
 ;; One line scroll
 (global-set-key "\M-n" (lambda() (interactive) (scroll-up 1) (next-line 1)))

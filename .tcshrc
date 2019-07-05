@@ -32,6 +32,7 @@ limit stacksize u
 #set color
 set ignoreeof
 set matchbeep=nomatch
+set nobeep
 unset autologout
 
 set path=(~/bin ~/local/bin /usr/sbin $path)
@@ -44,4 +45,4 @@ if ( $?UNDER_SCREEN ) then
     set prompt="%{\033[0000m\033k%c6\033\\%}> "
 endif
 
-source ~/dotfiles/bin/gpg_setup.csh
+# source ~/dotfiles/bin/gpg_setup.csh
