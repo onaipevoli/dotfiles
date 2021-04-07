@@ -1,6 +1,11 @@
 escape ^J^J
 ignorecase on
+
+# For emacs like key binding for copy mode
 markkeys "h=^B:j=^N:k=^P:l=^F:$=^E"
+markkeys ' '=^@
+bindkey ^J^Y paste .
+
 shell /bin/tcsh
 shelltitle '> |:'
 hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %Y/%m/%d %D %0c:%s"
